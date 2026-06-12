@@ -93,6 +93,17 @@
   .country-card:hover{transform:translateY(-3px);box-shadow:0 10px 28px rgba(27,42,74,0.09)}
   .country-card[onclick]{cursor:pointer}
   .country-card[onclick]:focus-visible{outline:2px solid var(--gold);outline-offset:4px}
+  .country-card.visual{min-height:275px;display:flex;flex-direction:column;justify-content:flex-end;background-image:linear-gradient(180deg,rgba(14,24,42,0.12) 0%,rgba(14,24,42,0.58) 48%,rgba(14,24,42,0.9) 100%),var(--city-img);background-size:cover;background-position:center;border:none;color:var(--white)}
+  .country-card.visual::before{width:100%;background:linear-gradient(180deg,transparent,rgba(201,162,39,0.22));z-index:0}
+  .country-card.visual>*{position:relative;z-index:1}
+  .country-card.visual .country-name{color:var(--white);text-shadow:0 2px 10px rgba(0,0,0,0.3)}
+  .country-card.visual .country-desc{color:rgba(255,255,255,0.78)}
+  .country-card.visual .country-flag{font-size:42px;margin-bottom:auto}
+  .country-card.visual .c-active{background:rgba(201,162,39,0.9);color:var(--navy)}
+  .country-card.visual .c-soon{background:rgba(255,255,255,0.16);color:var(--white);opacity:1;border:1px solid rgba(255,255,255,0.2)}
+  .mk-photo{--city-img:url('https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Skopje_view_from_Kale_3.jpg/3840px-Skopje_view_from_Kale_3.jpg')}
+  .cz-photo{--city-img:url('https://upload.wikimedia.org/wikipedia/commons/a/a7/Prague_%286365119737%29.jpg')}
+  .ro-photo{--city-img:url('https://upload.wikimedia.org/wikipedia/commons/a/a0/Bucharest_University_Square_%28cropped%29.jpg')}
   .country-flag{font-size:36px;margin-bottom:12px;display:block}
   .country-name{font-family:'Playfair Display',serif;font-size:20px;color:var(--navy);font-weight:700;margin-bottom:6px}
   .country-desc{font-size:13px;color:var(--muted);line-height:1.65}
@@ -150,9 +161,15 @@
   .uni-cards-grid{display:flex;flex-direction:column;gap:40px}
   .country-heading{margin:0 0 24px;padding-bottom:18px;border-bottom:1px solid rgba(27,42,74,0.1)}
   .country-heading:not(:first-child){margin-top:26px}
+  .country-heading.visual-heading{min-height:270px;border:0;border-radius:12px;padding:34px;display:flex;flex-direction:column;justify-content:flex-end;position:relative;overflow:hidden;background-image:linear-gradient(180deg,rgba(14,24,42,0.12) 0%,rgba(14,24,42,0.58) 48%,rgba(14,24,42,0.92) 100%),var(--city-img);background-size:cover;background-position:center;box-shadow:0 16px 38px rgba(27,42,74,0.16)}
+  .country-heading.visual-heading::before{content:'';position:absolute;inset:0;background:linear-gradient(90deg,rgba(201,162,39,0.22),transparent 48%);pointer-events:none}
+  .country-heading.visual-heading>*{position:relative;z-index:1}
   .country-kicker{font-size:10px;color:var(--gold);letter-spacing:2.5px;text-transform:uppercase;font-weight:700;margin-bottom:8px}
   .country-heading h2{font-family:'Playfair Display',serif;font-size:28px;color:var(--navy);font-weight:700;margin-bottom:8px}
   .country-heading p{font-size:14px;color:var(--muted);line-height:1.7;max-width:720px}
+  .country-heading.visual-heading .country-kicker{color:var(--gold-light)}
+  .country-heading.visual-heading h2{color:var(--white);font-size:34px;text-shadow:0 2px 12px rgba(0,0,0,0.32)}
+  .country-heading.visual-heading p{color:rgba(255,255,255,0.78)}
   .uni-desc{font-size:13px;color:rgba(255,255,255,0.55);line-height:1.6;max-width:700px;margin-top:8px}
   .program-note{font-size:12px;color:var(--muted);line-height:1.55}
   .uni-card{border:1px solid rgba(0,0,0,0.08);border-radius:12px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,0.04)}
@@ -177,6 +194,9 @@
   .romania-inner{max-width:1100px;margin:0 auto}
   .romania-card{background:var(--navy);border-radius:12px;padding:44px 40px;display:flex;justify-content:space-between;align-items:center;gap:30px;flex-wrap:wrap;position:relative;overflow:hidden}
   .romania-card::before{content:'';position:absolute;right:-40px;top:-40px;width:280px;height:280px;border-radius:50%;border:1px solid rgba(201,162,39,0.12)}
+  .romania-card.romania-visual{min-height:280px;background-image:linear-gradient(90deg,rgba(14,24,42,0.94) 0%,rgba(14,24,42,0.7) 48%,rgba(14,24,42,0.42) 100%),var(--city-img);background-size:cover;background-position:center}
+  .romania-card.romania-visual::before{inset:0;width:auto;height:auto;border:0;border-radius:0;background:linear-gradient(90deg,rgba(201,162,39,0.18),transparent 55%)}
+  .romania-card.romania-visual>*{position:relative;z-index:1}
   .romania-flag{font-size:52px}
   .romania-text h3{font-family:'Playfair Display',serif;font-size:26px;color:var(--white);font-weight:700;margin-bottom:8px}
   .romania-text p{font-size:14px;color:rgba(255,255,255,0.5);line-height:1.75;max-width:480px}
@@ -228,6 +248,7 @@
     .sec-title{font-size:28px;line-height:1.18}
     .sec-sub{font-size:14px;margin-bottom:30px}
     .why-card,.country-card{padding:22px}
+    .country-card.visual{min-height:245px}
     .contact-grid{grid-template-columns:1fr}
     .cform{padding:22px}
     .steps{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px 14px}
@@ -239,7 +260,9 @@
     .uni-page-title{font-size:32px;line-height:1.15}
     .uni-page-sub{line-height:1.55}
     .country-heading{margin-bottom:18px}
+    .country-heading.visual-heading{min-height:240px;padding:24px}
     .country-heading h2{font-size:24px}
+    .country-heading.visual-heading h2{font-size:28px}
     .country-heading p{font-size:13px}
     .uni-card{border-radius:10px}
     .uni-card-head{flex-direction:column;padding:22px;gap:14px}
@@ -249,6 +272,7 @@
     table{display:block;overflow-x:auto;white-space:nowrap;-webkit-overflow-scrolling:touch}
     thead th,tbody td{padding:12px 14px;font-size:13px}
     .romania-card{padding:28px 22px;align-items:flex-start}
+    .romania-card.romania-visual{min-height:250px}
     .romania-card>div{gap:16px!important}
     .romania-flag{font-size:42px}
     .romania-text h3{font-size:23px}
@@ -275,6 +299,7 @@
     .stat{display:flex;align-items:center;justify-content:space-between;text-align:left;padding:12px 14px}
     .stat-label{margin-top:0}
     .whyus,.countries,.process,.contact,.uni-cards-section,.romania-teaser{padding:42px 16px}
+    .country-card.visual{min-height:230px}
     .sec-title{font-size:25px}
     .steps{grid-template-columns:1fr;gap:24px}
     .step-desc{max-width:260px;margin:0 auto}
@@ -282,6 +307,8 @@
     .c-item{gap:10px}
     .cform{padding:18px}
     .uni-page-hero{padding:34px 16px 38px}
+    .country-heading.visual-heading{min-height:220px;padding:20px}
+    .country-heading.visual-heading h2{font-size:25px}
     .uni-page-title{font-size:28px}
     .uni-page-badges{gap:8px}
     .upbadge{padding:5px 10px}
@@ -378,19 +405,19 @@
     <div class="sec-title">Hizmet Verdiğimiz Ülkeler</div>
     <div class="sec-sub">Avrupa'da kaliteli ve uygun fiyatlı eğitim için doğru rehber.</div>
     <div class="country-grid">
-      <div class="country-card" onclick="goToUniversitySection('mk-universities')" role="button" tabindex="0" onkeydown="handleCardKey(event,'mk-universities')">
+      <div class="country-card visual mk-photo" onclick="goToUniversitySection('mk-universities')" role="button" tabindex="0" onkeydown="handleCardKey(event,'mk-universities')">
         <span class="country-flag">🇲🇰</span>
         <div class="country-name">Kuzey Makedonya</div>
         <div class="country-desc">3 anlaşmalı üniversite, AB geçerli diploma, uygun yaşam maliyeti ve Türkiye'ye yakın konum. Tıp, mühendislik, diş hekimliği ve daha fazlası.</div>
         <span class="c-badge c-active">✓ Aktif — 3 Üniversite</span>
       </div>
-      <div class="country-card" onclick="goToUniversitySection('cz-universities')" role="button" tabindex="0" onkeydown="handleCardKey(event,'cz-universities')">
+      <div class="country-card visual cz-photo" onclick="goToUniversitySection('cz-universities')" role="button" tabindex="0" onkeydown="handleCardKey(event,'cz-universities')">
         <span class="country-flag">🇨🇿</span>
         <div class="country-name">Çekya</div>
         <div class="country-desc">Prag ve Brno merkezli teknik, ekonomi, sanat, işletme ve sağlık programlarında öğrenci alımı başladı. Avrupa'nın kalbinde İngilizce eğitim seçenekleri.</div>
         <span class="c-badge c-active">✓ Aktif — 10 Üniversite</span>
       </div>
-      <div class="country-card" onclick="goToUniversitySection('romania-coming-soon')" role="button" tabindex="0" onkeydown="handleCardKey(event,'romania-coming-soon')">
+      <div class="country-card visual ro-photo" onclick="goToUniversitySection('romania-coming-soon')" role="button" tabindex="0" onkeydown="handleCardKey(event,'romania-coming-soon')">
         <span class="country-flag">🇷🇴</span>
         <div class="country-name">Romanya</div>
         <div class="country-desc">AB üyesi ülkede tam tanınan diplomalar. Özellikle tıp ve diş hekimliği alanlarında Avrupa'nın prestijli seçeneklerinden biri.</div>
@@ -493,7 +520,7 @@
 <section class="uni-cards-section">
   <div class="uni-cards-inner">
     <div class="uni-cards-grid">
-      <div class="country-heading" id="mk-universities">
+      <div class="country-heading visual-heading mk-photo" id="mk-universities">
         <div class="country-kicker">Kuzey Makedonya</div>
         <h2>Anlaşmalı Üniversiteler</h2>
         <p>Türkiye'ye yakın konumu, uygun yaşam maliyeti ve AB geçerli diploma avantajıyla öne çıkan Kuzey Makedonya üniversiteleri.</p>
@@ -574,7 +601,7 @@
         </table>
       </div>
 
-      <div class="country-heading" id="cz-universities">
+      <div class="country-heading visual-heading cz-photo" id="cz-universities">
         <div class="country-kicker">Çekya</div>
         <h2>Çekya Üniversiteleri</h2>
         <p>Prag, Brno ve Plzeň gibi şehirlerde teknik, ekonomi, sağlık, sanat ve işletme alanlarında İngilizce eğitim seçenekleri. Aşağıdaki bilgiler PDF'teki üniversite, bölüm ve ücret verilerinden derlenmiştir.</p>
@@ -813,7 +840,7 @@
 
 <section class="romania-teaser" id="romania-coming-soon">
   <div class="romania-inner">
-    <div class="romania-card">
+    <div class="romania-card romania-visual ro-photo">
       <div style="display:flex;align-items:center;gap:24px;flex-wrap:wrap">
         <div class="romania-flag">🇷🇴</div>
         <div class="romania-text">
