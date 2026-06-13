@@ -56,6 +56,7 @@
   .hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
   .stat{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);border-radius:6px;padding:16px 10px;text-align:center}
   .stat-num{font-family:'Playfair Display',serif;font-size:26px;color:var(--gold);font-weight:700;display:block}
+  .stat-num[data-counter]{font-variant-numeric:tabular-nums}
   .stat-label{font-size:11px;color:rgba(255,255,255,0.45);margin-top:2px;display:block}
   .hero-mavi{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:8px;padding:18px 22px}
   .hero-mavi-label{font-size:10px;color:var(--gold);letter-spacing:2px;text-transform:uppercase;margin-bottom:6px}
@@ -103,6 +104,7 @@
   .country-card.visual .c-soon{background:rgba(255,255,255,0.16);color:var(--white);opacity:1;border:1px solid rgba(255,255,255,0.2)}
   .mk-photo{--city-img:url('https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Skopje_view_from_Kale_3.jpg/3840px-Skopje_view_from_Kale_3.jpg')}
   .cz-photo{--city-img:url('https://upload.wikimedia.org/wikipedia/commons/a/a7/Prague_%286365119737%29.jpg')}
+  .bg-photo{--city-img:url('https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/View_of_Lyulin_Mountain_with_Bulgaria_Boulevard%2C_Sofia.jpg/3840px-View_of_Lyulin_Mountain_with_Bulgaria_Boulevard%2C_Sofia.jpg')}
   .ro-photo{--city-img:url('https://upload.wikimedia.org/wikipedia/commons/a/a0/Bucharest_University_Square_%28cropped%29.jpg')}
   .country-flag{font-size:36px;margin-bottom:12px;display:block}
   .country-name{font-family:'Playfair Display',serif;font-size:20px;color:var(--navy);font-weight:700;margin-bottom:6px}
@@ -347,7 +349,7 @@
       <h1>Hayallerin için <em>Dünyaya Açılan</em> Kapın</h1>
       <div class="hero-slogan2">✦ Hep Birlikte Başaracağız ✦</div>
       <div class="hero-divider"></div>
-      <p>Kuzey Makedonya'nın köklü üniversitelerinde Avrupa Birliği geçerli diploma fırsatı. Başvurudan yerleşime, vizeden oryantasyona kadar her adımda yanınızdayız.</p>
+      <p>Kuzey Makedonya, Çekya ve Bulgaristan'ın köklü üniversitelerinde Avrupa Birliği geçerli diploma fırsatı. Başvurudan yerleşime, vizeden oryantasyona kadar her adımda yanınızdayız.</p>
       <div class="hero-btns">
         <button class="btn-primary" onclick="document.getElementById('contact-section').scrollIntoView({behavior:'smooth'})">Ücretsiz Danışmanlık Al</button>
         <button class="btn-outline" onclick="showPage('universities')">Üniversiteleri İncele</button>
@@ -362,9 +364,9 @@
         </div>
       </div>
       <div class="hero-stats">
-        <div class="stat"><span class="stat-num">500+</span><span class="stat-label">Yerleştirme</span></div>
+        <div class="stat"><span class="stat-num" data-counter data-start="0" data-target="1500">0+</span><span class="stat-label">Yerleştirme</span></div>
         <div class="stat"><span class="stat-num">%98</span><span class="stat-label">Başarı</span></div>
-        <div class="stat"><span class="stat-num">13+</span><span class="stat-label">Üniversite</span></div>
+        <div class="stat"><span class="stat-num">19+</span><span class="stat-label">Üniversite</span></div>
       </div>
       <div class="hero-mavi">
         <div class="hero-mavi-label">Önemli Avantaj</div>
@@ -417,6 +419,12 @@
         <div class="country-desc">Prag ve Brno merkezli teknik, ekonomi, sanat, işletme ve sağlık programlarında öğrenci alımı başladı. Avrupa'nın kalbinde İngilizce eğitim seçenekleri.</div>
         <span class="c-badge c-active">✓ Aktif — 10 Üniversite</span>
       </div>
+      <div class="country-card visual bg-photo" onclick="goToUniversitySection('bg-universities')" role="button" tabindex="0" onkeydown="handleCardKey(event,'bg-universities')">
+        <span class="country-flag">🇧🇬</span>
+        <div class="country-name">Bulgaristan</div>
+        <div class="country-desc">Sofya merkezli tıp, diş hekimliği, mühendislik, ekonomi, işletme ve sosyal bilimler programlarında yeni öğrenci alımı başladı.</div>
+        <span class="c-badge c-active">✓ Aktif — 6 Üniversite</span>
+      </div>
       <div class="country-card visual ro-photo" onclick="goToUniversitySection('romania-coming-soon')" role="button" tabindex="0" onkeydown="handleCardKey(event,'romania-coming-soon')">
         <span class="country-flag">🇷🇴</span>
         <div class="country-name">Romanya</div>
@@ -466,6 +474,7 @@
             <option>Üsküp Aziz Kiril ve Metodius Üniversitesi</option>
             <option>Uluslararası Balkan Üniversitesi</option>
             <option>Çekya Üniversiteleri</option>
+            <option>Bulgaristan Üniversiteleri</option>
             <option>Romanya (Yakında)</option>
           </select>
         </div>
@@ -508,11 +517,11 @@
   <div class="sec-inner">
     <div class="uni-page-label">Kuzey Makedonya & Çekya</div>
     <div class="uni-page-title">Anlaşmalı Üniversitelerimiz</div>
-    <div class="uni-page-sub">Kuzey Makedonya ve Çekya'da öğrencilerimize uygun üniversite, bölüm ve ücret seçenekleri sunuyoruz</div>
+    <div class="uni-page-sub">Kuzey Makedonya, Çekya ve Bulgaristan'da öğrencilerimize uygun üniversite, bölüm ve ücret seçenekleri sunuyoruz</div>
     <div class="uni-page-badges">
       <span class="upbadge">Mavi Diploma</span>
       <span class="upbadge">AB Geçerli Diploma</span>
-      <span class="upbadge">13+ Üniversite</span>
+      <span class="upbadge">19+ Üniversite</span>
     </div>
   </div>
 </div>
@@ -834,6 +843,168 @@
         </table>
       </div>
 
+      <div class="country-heading visual-heading bg-photo" id="bg-universities">
+        <div class="country-kicker">Bulgaristan</div>
+        <h2>Bulgaristan Üniversiteleri</h2>
+        <p>Sofya merkezli sağlık, mühendislik, ekonomi, işletme, sosyal bilimler ve tasarım programlarında Avrupa standartlarında eğitim seçenekleri.</p>
+      </div>
+
+      <div class="uni-card">
+        <div class="uni-card-head">
+          <div>
+            <div class="uni-num">Bulgaristan 01</div>
+            <div class="uni-card-name">Sofia University St. Kliment Ohridski</div>
+            <div class="uni-card-loc">📍 Sofya, Bulgaristan</div>
+            <div class="uni-desc">Bulgaristan'ın en köklü üniversitelerinden biri olan Sofia University; sağlık, psikoloji, bilgisayar bilimleri ve işletme alanlarında güçlü seçenekler sunar.</div>
+          </div>
+          <div class="uni-card-badges">
+            <span class="ucbadge">Sofya</span>
+            <span class="ucbadge">Çok Alanlı</span>
+          </div>
+        </div>
+        <table>
+          <thead><tr><th>Bölüm / Program</th><th>Ücret / Yıl</th><th>Süre</th></tr></thead>
+          <tbody>
+            <tr><td>Medicine</td><td class="price">7.700 € - 8.000 €</td><td><span class="dur">6 Yıl</span></td></tr>
+            <tr><td>Pharmacy</td><td class="price">6.000 €</td><td><span class="dur">5 Yıl</span></td></tr>
+            <tr><td>Psychology</td><td class="price">3.850 € civarı</td><td><span class="dur">4 Yıl</span></td></tr>
+            <tr><td>Computer Science</td><td class="price">4.200 € - 4.900 €</td><td><span class="dur">4 Yıl</span></td></tr>
+            <tr><td>Software Engineering</td><td class="price">4.200 € - 4.900 €</td><td><span class="dur">4 Yıl</span></td></tr>
+            <tr><td>Business Administration</td><td class="price">2.900 € - 3.850 €</td><td><span class="dur">4 Yıl</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="uni-card">
+        <div class="uni-card-head">
+          <div>
+            <div class="uni-num">Bulgaristan 02</div>
+            <div class="uni-card-name">Technical University of Sofia</div>
+            <div class="uni-card-loc">📍 Sofya, Bulgaristan</div>
+            <div class="uni-desc">Mühendislik ve teknoloji alanlarında öne çıkan Technical University of Sofia, bilgisayar, elektrik, elektronik ve endüstri mühendisliği programlarıyla tercih edilir.</div>
+          </div>
+          <div class="uni-card-badges">
+            <span class="ucbadge">Teknik Üniversite</span>
+            <span class="ucbadge">Mühendislik</span>
+          </div>
+        </div>
+        <table>
+          <thead><tr><th>Bölüm / Program</th><th>Ücret / Yıl</th><th>Süre</th></tr></thead>
+          <tbody>
+            <tr><td>Computer Science & Engineering</td><td class="price">3.600 €</td><td><span class="dur">4 Yıl</span></td></tr>
+            <tr><td>Software Engineering</td><td class="price">3.600 €</td><td><span class="dur">4 Yıl</span></td></tr>
+            <tr><td>Computer Engineering</td><td class="price">4.000 €</td><td><span class="dur">4 Yıl</span></td></tr>
+            <tr><td>Information Technologies</td><td class="price">3.600 €</td><td><span class="dur">4 Yıl</span></td></tr>
+            <tr><td>Artificial Intelligence</td><td class="price">3.500 € - 4.000 €</td><td><span class="dur">4 Yıl</span></td></tr>
+            <tr><td>Electrical Engineering</td><td class="price">3.000 €</td><td><span class="dur">4 Yıl</span></td></tr>
+            <tr><td>Electronics Engineering</td><td class="price">3.000 €</td><td><span class="dur">4 Yıl</span></td></tr>
+            <tr><td>Mechanical Engineering</td><td class="price">3.000 €</td><td><span class="dur">4 Yıl</span></td></tr>
+            <tr><td>Industrial Engineering</td><td class="price">3.000 €</td><td><span class="dur">4 Yıl</span></td></tr>
+            <tr><td>Aeronautical Engineering</td><td class="price">3.000 €</td><td><span class="dur">4 Yıl</span></td></tr>
+            <tr><td>Industrial Management</td><td class="price">3.000 €</td><td><span class="dur">4 Yıl</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="uni-card">
+        <div class="uni-card-head">
+          <div>
+            <div class="uni-num">Bulgaristan 03</div>
+            <div class="uni-card-name">Medical University of Sofia</div>
+            <div class="uni-card-loc">📍 Sofya, Bulgaristan</div>
+            <div class="uni-desc">Sağlık alanında uzmanlaşmış Medical University of Sofia; tıp, diş hekimliği ve eczacılık programlarıyla öne çıkar.</div>
+          </div>
+          <div class="uni-card-badges">
+            <span class="ucbadge">Sağlık</span>
+            <span class="ucbadge">Sofya</span>
+          </div>
+        </div>
+        <table>
+          <thead><tr><th>Bölüm / Program</th><th>Ücret / Yıl</th><th>Süre</th></tr></thead>
+          <tbody>
+            <tr><td>Medicine</td><td class="price">9.950 €</td><td><span class="dur">6 Yıl</span></td></tr>
+            <tr><td>Dentistry</td><td class="price">10.000 €</td><td><span class="dur">5.5 Yıl</span></td></tr>
+            <tr><td>Pharmacy</td><td class="price">8.000 € - 10.340 €</td><td><span class="dur">5 Yıl</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="uni-card">
+        <div class="uni-card-head">
+          <div>
+            <div class="uni-num">Bulgaristan 04</div>
+            <div class="uni-card-name">University of National and World Economy</div>
+            <div class="uni-card-loc">📍 Sofya, Bulgaristan</div>
+            <div class="uni-desc">Ekonomi, finans, pazarlama ve uluslararası iş alanlarında kariyer hedefleyen öğrenciler için işletme ve ekonomi odaklı programlar sunar.</div>
+          </div>
+          <div class="uni-card-badges">
+            <span class="ucbadge">Ekonomi</span>
+            <span class="ucbadge">İşletme</span>
+          </div>
+        </div>
+        <table>
+          <thead><tr><th>Bölüm / Program</th><th>Ücret / Yıl</th><th>Süre</th></tr></thead>
+          <tbody>
+            <tr><td>Business Administration</td><td class="price">3.000 €</td><td><span class="dur">4 Yıl</span></td></tr>
+            <tr><td>International Business</td><td class="price">3.000 €</td><td><span class="dur">4 Yıl</span></td></tr>
+            <tr><td>Finance</td><td class="price">3.000 €</td><td><span class="dur">4 Yıl</span></td></tr>
+            <tr><td>Economics</td><td class="price">3.000 €</td><td><span class="dur">4 Yıl</span></td></tr>
+            <tr><td>Marketing</td><td class="price">3.000 €</td><td><span class="dur">4 Yıl</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="uni-card">
+        <div class="uni-card-head">
+          <div>
+            <div class="uni-num">Bulgaristan 05</div>
+            <div class="uni-card-name">New Bulgarian University</div>
+            <div class="uni-card-loc">📍 Sofya, Bulgaristan</div>
+            <div class="uni-desc">Esnek ve modern eğitim yaklaşımıyla bilinen New Bulgarian University; bilgisayar bilimleri, işletme, psikoloji ve tasarım alanlarında programlar sunar.</div>
+          </div>
+          <div class="uni-card-badges">
+            <span class="ucbadge">Modern Eğitim</span>
+            <span class="ucbadge">Tasarım</span>
+          </div>
+        </div>
+        <table>
+          <thead><tr><th>Bölüm / Program</th><th>Ücret / Yıl</th><th>Süre</th></tr></thead>
+          <tbody>
+            <tr><td>Computer Science</td><td class="price">3.500 € - 4.500 €</td><td><span class="dur">4 Yıl</span></td></tr>
+            <tr><td>Business Administration</td><td class="price">3.500 € - 4.500 €</td><td><span class="dur">4 Yıl</span></td></tr>
+            <tr><td>Psychology</td><td class="price">3.500 € - 4.500 €</td><td><span class="dur">4 Yıl</span></td></tr>
+            <tr><td>International Relations</td><td class="price">3.500 € - 4.500 €</td><td><span class="dur">4 Yıl</span></td></tr>
+            <tr><td>Graphic Design</td><td class="price">3.500 € - 4.500 €</td><td><span class="dur">4 Yıl</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="uni-card">
+        <div class="uni-card-head">
+          <div>
+            <div class="uni-num">Bulgaristan 06</div>
+            <div class="uni-card-name">American University in Bulgaria</div>
+            <div class="uni-card-loc">📍 Bulgaristan</div>
+            <div class="uni-desc">Amerikan eğitim modeliyle öne çıkan American University in Bulgaria; sosyal bilimler, işletme, ekonomi, gazetecilik ve bilgisayar bilimleri alanlarında programlar sunar.</div>
+          </div>
+          <div class="uni-card-badges">
+            <span class="ucbadge">Amerikan Modeli</span>
+            <span class="ucbadge">İngilizce</span>
+          </div>
+        </div>
+        <table>
+          <thead><tr><th>Bölüm / Program</th><th>Ücret / Yıl</th><th>Süre</th></tr></thead>
+          <tbody>
+            <tr><td>Computer Science</td><td class="price">12.000 € - 14.000 €</td><td><span class="dur">4 Yıl</span></td></tr>
+            <tr><td>Business Administration</td><td class="price">12.000 € - 14.000 €</td><td><span class="dur">4 Yıl</span></td></tr>
+            <tr><td>Economics</td><td class="price">12.000 € - 14.000 €</td><td><span class="dur">4 Yıl</span></td></tr>
+            <tr><td>Journalism</td><td class="price">12.000 € - 14.000 €</td><td><span class="dur">4 Yıl</span></td></tr>
+            <tr><td>Political Science</td><td class="price">12.000 € - 14.000 €</td><td><span class="dur">4 Yıl</span></td></tr>
+            <tr><td>Psychology</td><td class="price">12.000 € - 14.000 €</td><td><span class="dur">4 Yıl</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+
     </div>
   </div>
 </section>
@@ -879,6 +1050,33 @@ function handleCardKey(event,sectionId){
     goToUniversitySection(sectionId);
   }
 }
+
+function animateCounters(){
+  document.querySelectorAll('[data-counter]').forEach(counter=>{
+    if(counter.dataset.animated==='true') return;
+
+    const start = Number(counter.dataset.start || 0);
+    const target = Number(counter.dataset.target || 0);
+    const duration = 1800;
+    const startedAt = performance.now();
+    counter.dataset.animated = 'true';
+
+    function tick(now){
+      const progress = Math.min((now - startedAt) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      const value = Math.round(start + (target - start) * eased);
+      counter.textContent = value.toLocaleString('tr-TR') + '+';
+
+      if(progress < 1){
+        requestAnimationFrame(tick);
+      }
+    }
+
+    requestAnimationFrame(tick);
+  });
+}
+
+window.addEventListener('load', animateCounters);
 </script>
 </body>
 </html>
