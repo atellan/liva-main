@@ -1,3 +1,10 @@
 work/
 outputs/
 liva-global.html
+
+# wrangler files
+.wrangler
+.dev.vars*
+!.dev.vars.example
+.env*
+!.env.example
