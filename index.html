@@ -16,7 +16,16 @@
   .nav-left{display:flex;align-items:center;gap:14px;min-width:0}
   .nav-back{border:1px solid rgba(201,162,39,0.35);background:rgba(201,162,39,0.1);color:var(--gold-light);border-radius:4px;padding:8px 12px;font-size:12px;font-weight:700;letter-spacing:0.3px;cursor:pointer;font-family:inherit;white-space:nowrap;transition:all 0.2s}
   .nav-back:hover{background:var(--gold);color:var(--navy);border-color:var(--gold)}
-  .nav-logo{display:flex;align-items:center;gap:12px;min-width:0}
+  .nav-logo{display:flex;align-items:center;gap:13px;min-width:0;padding:0;background:transparent;border:0;box-shadow:none}
+  .nav-logo img{width:54px!important;height:54px!important;background:rgba(255,255,255,0.14)!important;border:1px solid rgba(201,162,39,0.26)!important;padding:4px!important;border-radius:12px!important;box-shadow:0 8px 18px rgba(0,0,0,0.22),inset 0 1px 0 rgba(255,255,255,0.14)!important;filter:drop-shadow(0 5px 10px rgba(0,0,0,0.28)) drop-shadow(0 0 8px rgba(201,162,39,0.16));animation:logoOrbit 8s linear infinite;transform-style:preserve-3d;will-change:transform}
+  .nav-logo:hover img{animation-play-state:paused}
+  @keyframes logoOrbit{
+    0%{transform:rotateY(0deg) rotateZ(0deg)}
+    45%{transform:rotateY(180deg) rotateZ(0deg)}
+    50%{transform:rotateY(180deg) rotateZ(2deg)}
+    95%{transform:rotateY(360deg) rotateZ(0deg)}
+    100%{transform:rotateY(360deg) rotateZ(0deg)}
+  }
   .nav-logo-icon{width:44px;height:44px;background:var(--gold);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0}
   .nav-brand-name{font-family:'Playfair Display',serif;font-size:18px;color:var(--white);letter-spacing:1px}
   .nav-brand-name span{color:var(--gold)}
@@ -113,13 +122,40 @@
   .c-active{background:rgba(201,162,39,0.12);color:#7a5c10}
   .c-soon{background:rgba(27,42,74,0.07);color:var(--navy);opacity:0.7}
 
+  /* DECISION SECTIONS */
+  .country-insights,.comparison,.stories,.faq{padding:76px 48px;background:var(--white)}
+  .country-insights{background:var(--white)}
+  .comparison{background:#F7F8F4}
+  .stories{background:var(--navy);color:var(--white)}
+  .stories .sec-title{color:var(--white)}
+  .stories .sec-sub{color:rgba(255,255,255,0.5)}
+  .insight-grid,.compare-grid,.story-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+  .insight-card,.compare-card,.story-card,.faq-item{border-radius:8px;border:1px solid rgba(27,42,74,0.09);background:var(--white);overflow:hidden}
+  .insight-card{padding:24px}
+  .insight-top{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-bottom:16px}
+  .insight-country{font-family:'Playfair Display',serif;font-size:21px;color:var(--navy);font-weight:700}
+  .insight-pill{font-size:10px;letter-spacing:1px;text-transform:uppercase;font-weight:800;color:#7a5c10;background:rgba(201,162,39,0.13);padding:5px 10px;border-radius:999px;white-space:nowrap}
+  .insight-list{display:grid;gap:10px}
+  .insight-line{font-size:13px;color:var(--muted);line-height:1.55}
+  .insight-line strong{color:var(--navy);font-weight:800}
+  .compare-card{padding:22px}
+  .compare-title{font-size:15px;color:var(--navy);font-weight:800;margin-bottom:14px}
+  .compare-row{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;border-top:1px solid rgba(27,42,74,0.08);padding:10px 0;font-size:13px;color:var(--muted)}
+  .compare-row:first-of-type{border-top:0;padding-top:0}
+  .compare-row span:last-child{color:#1a6b3a;font-weight:800;text-align:right}
+  .story-card{background:rgba(255,255,255,0.06);border-color:rgba(255,255,255,0.1);padding:24px}
+  .story-tag{font-size:10px;letter-spacing:1.8px;text-transform:uppercase;color:var(--gold-light);font-weight:800;margin-bottom:10px}
+  .story-title{font-size:16px;color:var(--white);font-weight:800;margin-bottom:8px}
+  .story-text{font-size:13px;color:rgba(255,255,255,0.58);line-height:1.7}
+  .story-result{display:inline-block;margin-top:14px;color:var(--navy);background:var(--gold);font-size:11px;font-weight:800;padding:5px 10px;border-radius:2px}
+
   /* PROCESS */
   .process{background:var(--navy);padding:76px 48px}
   .process .sec-title{color:var(--white)}
   .process .sec-sub{color:rgba(255,255,255,0.45)}
   .process .sec-label{color:var(--gold)}
-  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:44px;position:relative}
-  .steps::before{content:'';position:absolute;top:31px;left:15%;right:15%;height:1px;background:rgba(201,162,39,0.18)}
+  .steps{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:14px;margin-top:44px;position:relative}
+  .steps::before{content:'';position:absolute;top:31px;left:7%;right:7%;height:1px;background:rgba(201,162,39,0.18)}
   .step{text-align:center;padding:0 12px}
   .step-num{width:62px;height:62px;border-radius:50%;background:rgba(201,162,39,0.1);border:1.5px solid rgba(201,162,39,0.5);display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-family:'Playfair Display',serif;font-size:22px;color:var(--gold);font-weight:700;position:relative;z-index:1}
   .step-title{font-size:14px;color:var(--white);font-weight:600;margin-bottom:5px}
@@ -143,6 +179,18 @@
   .fg textarea{height:80px;resize:none}
   .btn-submit{width:100%;background:var(--navy);color:var(--white);padding:13px;border-radius:4px;font-size:14px;font-weight:600;letter-spacing:0.5px;cursor:pointer;border:none;font-family:inherit;transition:background 0.2s}
   .btn-submit:hover{background:var(--navy-light)}
+  .form-note{font-size:12px;color:var(--muted);line-height:1.5;margin-top:12px;min-height:18px}
+  .form-note.is-success{color:#1a6b3a;font-weight:700}
+
+  /* FAQ */
+  .faq{background:var(--white)}
+  .faq-list{display:grid;gap:12px;max-width:850px}
+  .faq-item{padding:0}
+  .faq-item summary{cursor:pointer;list-style:none;padding:18px 22px;font-size:15px;color:var(--navy);font-weight:800;display:flex;justify-content:space-between;gap:18px}
+  .faq-item summary::-webkit-details-marker{display:none}
+  .faq-item summary::after{content:'+';color:var(--gold);font-size:22px;line-height:1}
+  .faq-item[open] summary::after{content:'-'}
+  .faq-item p{padding:0 22px 20px;font-size:13px;color:var(--muted);line-height:1.75}
 
   /* FOOTER */
   footer{background:var(--navy);padding:30px 48px;display:flex;justify-content:space-between;align-items:center;border-top:1px solid rgba(255,255,255,0.06);flex-wrap:wrap;gap:10px}
@@ -158,6 +206,12 @@
   .uni-page-sub{font-size:14px;color:rgba(255,255,255,0.5);margin-bottom:20px}
   .uni-page-badges{display:flex;gap:10px;flex-wrap:wrap}
   .upbadge{background:rgba(201,162,39,0.15);border:1px solid rgba(201,162,39,0.25);color:var(--gold-light);font-size:11px;padding:5px 14px;border-radius:2px;letter-spacing:0.5px;font-weight:600}
+  .uni-filter-section{background:#F7F8F4;padding:22px 48px;border-bottom:1px solid rgba(27,42,74,0.08)}
+  .uni-filterbar{max-width:1100px;margin:0 auto;display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+  .filter-label{font-size:11px;color:var(--navy);font-weight:800;text-transform:uppercase;letter-spacing:1.4px;margin-right:4px}
+  .filter-chip{border:1px solid rgba(27,42,74,0.15);background:var(--white);color:var(--navy);border-radius:999px;padding:9px 14px;font-size:12px;font-weight:800;font-family:inherit;cursor:pointer;transition:all 0.2s}
+  .filter-chip:hover,.filter-chip.active{background:var(--navy);color:var(--white);border-color:var(--navy)}
+  .uni-card.is-hidden,.country-heading.is-hidden{display:none}
   .uni-cards-section{background:var(--white);padding:64px 48px}
   .uni-cards-inner{max-width:1100px;margin:0 auto}
   .uni-cards-grid{display:flex;flex-direction:column;gap:40px}
@@ -204,13 +258,17 @@
   .romania-text p{font-size:14px;color:rgba(255,255,255,0.5);line-height:1.75;max-width:480px}
   .romania-badge{background:var(--gold);color:var(--navy);font-size:13px;font-weight:700;padding:12px 28px;border-radius:3px;white-space:nowrap;cursor:pointer;border:none;font-family:inherit;margin-top:8px}
 
+  .whatsapp-float{position:fixed;right:22px;bottom:22px;z-index:120;background:#128C7E;color:var(--white);text-decoration:none;border-radius:999px;padding:12px 18px;font-size:13px;font-weight:800;letter-spacing:0.2px;box-shadow:0 12px 28px rgba(18,140,126,0.28);display:flex;align-items:center;gap:8px;max-width:calc(100vw - 32px);white-space:nowrap}
+  .whatsapp-float::before{content:'WA';display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:50%;background:rgba(255,255,255,0.18);font-size:10px;font-weight:900;letter-spacing:0.4px}
+  .whatsapp-float:hover{background:#0f7a6e}
+
   @media(max-width:980px){
     nav{padding:0 28px}
     .nav-links{gap:2px}
     .nav-links a{font-size:12px;padding:7px 9px}
     .hero-inner{gap:42px}
     .hero h1{font-size:42px}
-    .steps{grid-template-columns:repeat(2,1fr);gap:30px 18px}
+    .steps{grid-template-columns:repeat(3,1fr);gap:30px 18px}
     .steps::before{display:none}
     .contact-grid{gap:36px}
     .uni-cards-section{padding-left:32px;padding-right:32px}
@@ -220,7 +278,8 @@
     nav{height:auto;min-height:64px;padding:10px 18px;gap:12px;flex-wrap:wrap}
     .nav-left{width:100%;gap:10px}
     .nav-back{padding:8px 10px;font-size:12px}
-    .nav-logo img{width:42px!important;height:42px!important;flex-shrink:0}
+    .nav-logo{padding:0}
+    .nav-logo img{width:48px!important;height:48px!important;flex-shrink:0;padding:3px!important;border-radius:10px!important}
     .nav-brand-name{font-size:16px;white-space:nowrap}
     .nav-brand-sub{font-size:8px;letter-spacing:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:168px}
     .nav-links{width:100%;gap:8px;overflow-x:auto;padding-bottom:2px;scrollbar-width:none}
@@ -246,7 +305,7 @@
     .slogan-band-inner{flex-direction:column;gap:10px;text-align:center}
     .slogan-text{font-size:15px}
     .slogan-dot{display:none}
-    .whyus,.countries,.process,.contact,.uni-cards-section,.romania-teaser{padding:52px 20px}
+    .whyus,.countries,.country-insights,.comparison,.stories,.process,.faq,.contact,.uni-cards-section,.romania-teaser{padding:52px 20px}
     .sec-title{font-size:28px;line-height:1.18}
     .sec-sub{font-size:14px;margin-bottom:30px}
     .why-card,.country-card{padding:22px}
@@ -271,8 +330,19 @@
     .uni-card-name{font-size:19px;line-height:1.25}
     .uni-card-badges{width:100%}
     .ucbadge{white-space:normal}
-    table{display:block;overflow-x:auto;white-space:nowrap;-webkit-overflow-scrolling:touch}
-    thead th,tbody td{padding:12px 14px;font-size:13px}
+    .uni-filter-section{padding:18px 20px}
+    .uni-filterbar{gap:8px}
+    .filter-label{width:100%;margin-bottom:2px}
+    .filter-chip{padding:9px 12px;font-size:12px}
+    .uni-card table{display:block;overflow:visible;white-space:normal}
+    .uni-card thead{display:none}
+    .uni-card tbody{display:grid;gap:10px;padding:14px;background:#fff}
+    .uni-card tbody tr{display:grid;gap:9px;border:1px solid rgba(27,42,74,0.1);border-radius:8px;padding:12px;background:#fff}
+    .uni-card tbody tr:nth-child(even),.uni-card tbody tr:hover{background:#fff}
+    .uni-card tbody td{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;padding:0;border:0;font-size:13px;white-space:normal;text-align:right}
+    .uni-card tbody td:first-child{display:block;text-align:left}
+    .uni-card tbody td::before{content:attr(data-label);font-size:10px;color:var(--muted);font-weight:800;letter-spacing:0.8px;text-transform:uppercase;text-align:left;flex:0 0 92px}
+    .uni-card tbody td:first-child::before{display:block;margin-bottom:4px}
     .romania-card{padding:28px 22px;align-items:flex-start}
     .romania-card.romania-visual{min-height:250px}
     .romania-card>div{gap:16px!important}
@@ -300,7 +370,7 @@
     .hero-stats{grid-template-columns:1fr}
     .stat{display:flex;align-items:center;justify-content:space-between;text-align:left;padding:12px 14px}
     .stat-label{margin-top:0}
-    .whyus,.countries,.process,.contact,.uni-cards-section,.romania-teaser{padding:42px 16px}
+    .whyus,.countries,.country-insights,.comparison,.stories,.process,.faq,.contact,.uni-cards-section,.romania-teaser{padding:42px 16px}
     .country-card.visual{min-height:230px}
     .sec-title{font-size:25px}
     .steps{grid-template-columns:1fr;gap:24px}
@@ -316,8 +386,12 @@
     .upbadge{padding:5px 10px}
     .uni-cards-grid{gap:28px}
     .uni-card-head{padding:18px}
-    thead th,tbody td{padding:11px 12px}
+    .whatsapp-float{right:14px;bottom:14px;padding:11px 13px;font-size:12px}
     .footer-brand{font-size:14px}
+  }
+
+  @media(prefers-reduced-motion:reduce){
+    .nav-logo img{animation:none}
   }
 </style>
 </head>
@@ -435,16 +509,147 @@
   </div>
 </section>
 
+<section class="country-insights">
+  <div class="sec-inner">
+    <div class="sec-label">Ülke Rehberi</div>
+    <div class="sec-title">Hangi Ülke Size Daha Uygun?</div>
+    <div class="sec-sub">Öğrencinin hedefi, bütçesi ve bölüm tercihi aynı anda düşünülünce karar çok daha netleşir.</div>
+    <div class="insight-grid">
+      <div class="insight-card">
+        <div class="insight-top">
+          <div class="insight-country">Kuzey Makedonya</div>
+          <span class="insight-pill">Yakın & Uygun</span>
+        </div>
+        <div class="insight-list">
+          <div class="insight-line"><strong>Öne çıkanlar:</strong> Tıp, diş hekimliği, yazılım, hukuk ve sağlık bölümleri.</div>
+          <div class="insight-line"><strong>Kimin için ideal:</strong> Türkiye'ye yakın, ulaşımı kolay ve ekonomik bir seçenek isteyen öğrenciler.</div>
+          <div class="insight-line"><strong>Avantaj:</strong> Uygun yıllık ücretler ve daha erişilebilir yaşam maliyeti.</div>
+        </div>
+      </div>
+      <div class="insight-card">
+        <div class="insight-top">
+          <div class="insight-country">Çekya</div>
+          <span class="insight-pill">Avrupa Merkezi</span>
+        </div>
+        <div class="insight-list">
+          <div class="insight-line"><strong>Öne çıkanlar:</strong> Teknik bölümler, ekonomi, sanat, işletme ve sağlık programları.</div>
+          <div class="insight-line"><strong>Kimin için ideal:</strong> Prag ve Brno gibi şehirlerde uluslararası kampüs deneyimi isteyen öğrenciler.</div>
+          <div class="insight-line"><strong>Avantaj:</strong> Güçlü akademik marka, İngilizce program çeşitliliği ve Avrupa kariyer ağı.</div>
+        </div>
+      </div>
+      <div class="insight-card">
+        <div class="insight-top">
+          <div class="insight-country">Bulgaristan</div>
+          <span class="insight-pill">Sağlık & Teknik</span>
+        </div>
+        <div class="insight-list">
+          <div class="insight-line"><strong>Öne çıkanlar:</strong> Tıp, diş hekimliği, eczacılık, mühendislik, ekonomi ve işletme.</div>
+          <div class="insight-line"><strong>Kimin için ideal:</strong> AB içinde özellikle Sofya merkezli sağlık ve teknik program arayan öğrenciler.</div>
+          <div class="insight-line"><strong>Avantaj:</strong> Bölüm çeşitliliği, İngilizce programlar ve Avrupa diploması.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="comparison">
+  <div class="sec-inner">
+    <div class="sec-label">Ücret Karşılaştırması</div>
+    <div class="sec-title">Popüler Bölümlerde Yıllık Ücret Aralıkları</div>
+    <div class="sec-sub">Aşağıdaki aralıklar öğrencinin ülke ve bölüm kararını hızlıca karşılaştırabilmesi için özetlenmiştir.</div>
+    <div class="compare-grid">
+      <div class="compare-card">
+        <div class="compare-title">Tıp</div>
+        <div class="compare-row"><span>Kuzey Makedonya</span><span>5.000 € - 6.000 €</span></div>
+        <div class="compare-row"><span>Bulgaristan</span><span>7.700 € - 10.000 €</span></div>
+        <div class="compare-row"><span>Çekya</span><span>15.000 € - 15.500 €</span></div>
+      </div>
+      <div class="compare-card">
+        <div class="compare-title">Diş Hekimliği</div>
+        <div class="compare-row"><span>Kuzey Makedonya</span><span>5.000 € - 6.000 €</span></div>
+        <div class="compare-row"><span>Bulgaristan</span><span>10.000 €</span></div>
+        <div class="compare-row"><span>Çekya</span><span>13.330 € - 15.600 €</span></div>
+      </div>
+      <div class="compare-card">
+        <div class="compare-title">Yazılım / Bilgisayar</div>
+        <div class="compare-row"><span>Kuzey Makedonya</span><span>2.000 € - 4.000 €</span></div>
+        <div class="compare-row"><span>Bulgaristan</span><span>3.500 € - 4.900 €</span></div>
+        <div class="compare-row"><span>Çekya</span><span>4.000 € - 4.300 €</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="stories">
+  <div class="sec-inner">
+    <div class="sec-label">Öğrenci Yolculukları</div>
+    <div class="sec-title">Gerçekçi Hedef, Net Başvuru, Güçlü Takip</div>
+    <div class="sec-sub">İsim kullanmadan, öğrencilerimizin en sık yaşadığı başvuru senaryolarından kısa örnekler.</div>
+    <div class="story-grid">
+      <div class="story-card">
+        <div class="story-tag">Sağlık Alanı</div>
+        <div class="story-title">Tıp hedefi olan öğrenci için ülke karşılaştırması</div>
+        <div class="story-text">Bütçe, dil ve şehir beklentisi birlikte değerlendirildi; öğrenciye Makedonya ve Bulgaristan seçenekleri net tablolarla sunuldu.</div>
+        <span class="story-result">Başvuru planı hazırlandı</span>
+      </div>
+      <div class="story-card">
+        <div class="story-tag">Teknik Alan</div>
+        <div class="story-title">Yazılım isteyen öğrenci için program eşleştirme</div>
+        <div class="story-text">İngilizce eğitim, ücret ve kariyer hedefi dikkate alınarak Çekya, Makedonya ve Bulgaristan alternatifleri karşılaştırıldı.</div>
+        <span class="story-result">Program listesi oluşturuldu</span>
+      </div>
+      <div class="story-card">
+        <div class="story-tag">Aile Danışmanlığı</div>
+        <div class="story-title">Vize ve yerleşim süreci için adım adım takip</div>
+        <div class="story-text">Kabul sonrası evrak, konaklama ve ülkeye varış aşamaları tek takvimde toplandı; aile süreç boyunca bilgilendirildi.</div>
+        <span class="story-result">Süreç şeffaflaştırıldı</span>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="process">
   <div class="sec-inner">
     <div class="sec-label">Sürecimiz</div>
-    <div class="sec-title">4 Adımda Yurtdışı Eğitim</div>
-    <div class="sec-sub">Karmaşık süreci sizin için sade ve anlaşılır hale getiriyoruz.</div>
+    <div class="sec-title">6 Adımda Yurtdışı Eğitim</div>
+    <div class="sec-sub">İlk görüşmeden ülkeye yerleşime kadar süreci küçük, takip edilebilir adımlara bölüyoruz.</div>
     <div class="steps">
-      <div class="step"><div class="step-num">1</div><div class="step-title">Ücretsiz Görüşme</div><div class="step-desc">Hedeflerinizi ve beklentilerinizi dinliyoruz</div></div>
-      <div class="step"><div class="step-num">2</div><div class="step-title">Planlama</div><div class="step-desc">Size özel yol haritası hazırlıyoruz</div></div>
-      <div class="step"><div class="step-num">3</div><div class="step-title">Başvuru</div><div class="step-desc">Tüm belgeler ve başvurular tamamlanıyor</div></div>
-      <div class="step"><div class="step-num">4</div><div class="step-title">Yerleşim</div><div class="step-desc">Vize ve oryantasyon sürecinde destek</div></div>
+      <div class="step"><div class="step-num">1</div><div class="step-title">Ücretsiz Danışmanlık</div><div class="step-desc">Hedef, bütçe ve bölüm tercihlerinizi birlikte netleştiriyoruz</div></div>
+      <div class="step"><div class="step-num">2</div><div class="step-title">Evrak Planı</div><div class="step-desc">Gerekli belgeleri ve tarihleri tek listede topluyoruz</div></div>
+      <div class="step"><div class="step-num">3</div><div class="step-title">Başvuru</div><div class="step-desc">Üniversite başvurularını sizin adınıza takip ediyoruz</div></div>
+      <div class="step"><div class="step-num">4</div><div class="step-title">Kabul</div><div class="step-desc">Kabul sonrası kayıt ve ödeme adımlarını yönlendiriyoruz</div></div>
+      <div class="step"><div class="step-num">5</div><div class="step-title">Vize</div><div class="step-desc">Vize evrakları ve randevu sürecinde destek oluyoruz</div></div>
+      <div class="step"><div class="step-num">6</div><div class="step-title">Yerleşim</div><div class="step-desc">Konaklama, oryantasyon ve ülkeye varış sürecini planlıyoruz</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="faq">
+  <div class="sec-inner">
+    <div class="sec-label">Sık Sorulan Sorular</div>
+    <div class="sec-title">Karar Vermeden Önce Bilmeniz Gerekenler</div>
+    <div class="sec-sub">Ailelerin ve öğrencilerin ilk görüşmede en çok sorduğu başlıkları kısa cevaplarla topladık.</div>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>Diploma Türkiye'de geçerli mi?</summary>
+        <p>Üniversite ve bölüm seçimi yapılırken denklik ve tanınırlık başlıkları ayrıca değerlendirilir. Öğrencinin hedeflediği mesleğe göre güncel süreçler danışmanlık görüşmesinde netleştirilir.</p>
+      </details>
+      <details class="faq-item">
+        <summary>İngilizce bilmek şart mı?</summary>
+        <p>Birçok program İngilizce açılır; bazı ülkelerde yerel dil veya hazırlık seçenekleri de bulunur. Öğrencinin seviyesine göre uygun program ve hazırlık alternatifi planlanır.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Ücretler yıllık mı?</summary>
+        <p>Sitedeki ücretler yıllık eğitim ücreti olarak paylaşılmıştır. Konaklama, yaşam gideri, başvuru ve vize masrafları ayrıca ülke bazında değerlendirilir.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Konaklama desteği var mı?</summary>
+        <p>Evet. Kabul sonrasında yurt, ev ve şehir içi yerleşim seçenekleri öğrencinin bütçesine göre planlanır.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Başvuruya ne zaman başlamalıyım?</summary>
+        <p>Kontenjan, evrak ve vize tarihleri ülkeye göre değiştiği için mümkün olduğunca erken başlamak avantaj sağlar. En doğru takvim ilk görüşmede çıkarılır.</p>
+      </details>
     </div>
   </div>
 </section>
@@ -457,19 +662,20 @@
         <h3>Ücretsiz Danışmanlık Randevusu Alın</h3>
         <p>2017'den bu yana güvenle hizmet veriyoruz. Yurtdışı eğitim hayalinize giden yolda ilk adımı birlikte atalım. Uzmanlarımız sorularınızı yanıtlamaya hazır.</p>
         <div class="c-item"><div class="c-icon">📞</div><div class="c-item-text"><strong>Telefon</strong><span>+90 530 395 01 41</span><span>+389 75 610 092</span></div></div>
-        <div class="c-item"><div class="c-icon">✉️</div><div class="c-item-text"><strong>E-posta</strong><span>info@livaglobal.com</span></div></div>
+        <div class="c-item"><div class="c-icon">✉️</div><div class="c-item-text"><strong>E-posta</strong><span>info@livagloball.com</span></div></div>
         <div class="c-item"><div class="c-icon">📍</div><div class="c-item-text"><strong>Adres</strong><span>Sakarya, Türkiye</span></div></div>
       </div>
-      <div class="cform">
+      <form class="cform" id="appointment-form">
         <div class="frow">
-          <div class="fg"><label>Ad</label><input type="text" placeholder="Adınız"></div>
-          <div class="fg"><label>Soyad</label><input type="text" placeholder="Soyadınız"></div>
+          <div class="fg"><label for="firstName">Ad</label><input id="firstName" name="firstName" type="text" placeholder="Adınız" autocomplete="given-name" required></div>
+          <div class="fg"><label for="lastName">Soyad</label><input id="lastName" name="lastName" type="text" placeholder="Soyadınız" autocomplete="family-name" required></div>
         </div>
-        <div class="fg"><label>E-posta</label><input type="email" placeholder="email@ornek.com"></div>
-        <div class="fg"><label>Telefon</label><input type="tel" placeholder="+90 5XX XXX XX XX"></div>
+        <div class="fg"><label for="email">E-posta</label><input id="email" name="email" type="email" placeholder="email@ornek.com" autocomplete="email" required></div>
+        <div class="fg"><label for="phone">Telefon</label><input id="phone" name="phone" type="tel" placeholder="+90 5XX XXX XX XX" autocomplete="tel" required></div>
         <div class="fg">
-          <label>İlgilendiğiniz Üniversite</label>
-          <select>
+          <label for="interest">İlgilendiğiniz Üniversite</label>
+          <select id="interest" name="interest" required>
+            <option value="" selected disabled>Seçiniz</option>
             <option>Goce Delçev Üniversitesi</option>
             <option>Üsküp Aziz Kiril ve Metodius Üniversitesi</option>
             <option>Uluslararası Balkan Üniversitesi</option>
@@ -478,16 +684,17 @@
             <option>Romanya (Yakında)</option>
           </select>
         </div>
-        <div class="fg"><label>Mesajınız</label><textarea placeholder="Sorularınızı paylaşın..."></textarea></div>
-        <button class="btn-submit">Randevu Talep Et</button>
-      </div>
+        <div class="fg"><label for="message">Mesajınız</label><textarea id="message" name="message" placeholder="Sorularınızı paylaşın..."></textarea></div>
+        <button class="btn-submit" type="submit">Randevu Talep Et</button>
+        <div class="form-note" id="form-note" aria-live="polite"></div>
+      </form>
     </div>
   </div>
 </section>
 
 <footer>
   <div class="footer-brand">LIVA <span>GLOBAL</span> — Yurtdışı Eğitim Danışmanlığı</div>
-  <div class="footer-copy">© 2017–2026 Liva Global. Tüm hakları saklıdır. | info@livaglobal.com</div>
+  <div class="footer-copy">© 2017–2026 Liva Global. Tüm hakları saklıdır. | info@livagloball.com</div>
 </footer>
 </div>
 
@@ -525,6 +732,17 @@
     </div>
   </div>
 </div>
+
+<section class="uni-filter-section" aria-label="Üniversite filtreleri">
+  <div class="uni-filterbar">
+    <span class="filter-label">Filtrele</span>
+    <button class="filter-chip active" type="button" data-filter="all">Tümü</button>
+    <button class="filter-chip" type="button" data-filter="health">Sağlık</button>
+    <button class="filter-chip" type="button" data-filter="engineering">Mühendislik & IT</button>
+    <button class="filter-chip" type="button" data-filter="business">İşletme & Ekonomi</button>
+    <button class="filter-chip" type="button" data-filter="arts">Sanat & Tasarım</button>
+  </div>
+</section>
 
 <section class="uni-cards-section">
   <div class="uni-cards-inner">
@@ -1026,9 +1244,11 @@
 
 <footer>
   <div class="footer-brand">LIVA <span>GLOBAL</span> — Yurtdışı Eğitim Danışmanlığı</div>
-  <div class="footer-copy">© 2017–2026 Liva Global. Tüm hakları saklıdır. | info@livaglobal.com</div>
+  <div class="footer-copy">© 2017–2026 Liva Global. Tüm hakları saklıdır. | info@livagloball.com</div>
 </footer>
 </div>
+
+<a class="whatsapp-float" href="https://wa.me/38975610092?text=Merhaba%20Liva%20Global%2C%20yurtd%C4%B1%C5%9F%C4%B1%20e%C4%9Fitim%20dan%C4%B1%C5%9Fmanl%C4%B1%C4%9F%C4%B1%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener" aria-label="WhatsApp ile iletişime geç">WhatsApp ile iletişime geç</a>
 
 <script>
 function showPage(name){
@@ -1076,7 +1296,113 @@ function animateCounters(){
   });
 }
 
-window.addEventListener('load', animateCounters);
+function labelTables(){
+  document.querySelectorAll('table').forEach(table=>{
+    const labels = Array.from(table.querySelectorAll('thead th')).map(th=>th.textContent.trim());
+    table.querySelectorAll('tbody tr').forEach(row=>{
+      Array.from(row.children).forEach((cell,index)=>{
+        cell.setAttribute('data-label', labels[index] || 'Bilgi');
+      });
+    });
+  });
+}
+
+function setupAppointmentForm(){
+  const form = document.getElementById('appointment-form');
+  if(!form) return;
+
+  form.addEventListener('submit', event=>{
+    event.preventDefault();
+    const data = new FormData(form);
+    const fullName = `${data.get('firstName') || ''} ${data.get('lastName') || ''}`.trim();
+    const subject = `Randevu Talebi - ${fullName || 'Liva Global'}`;
+    const body = [
+      'Yeni randevu talebi:',
+      '',
+      `Ad Soyad: ${fullName}`,
+      `E-posta: ${data.get('email') || ''}`,
+      `Telefon: ${data.get('phone') || ''}`,
+      `İlgilendiği Üniversite/Ülke: ${data.get('interest') || ''}`,
+      '',
+      'Mesaj:',
+      data.get('message') || '-'
+    ].join('\n');
+
+    window.location.href = `mailto:info@livagloball.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+    const note = document.getElementById('form-note');
+    if(note){
+      note.textContent = 'E-posta taslağı hazırlandı. Mail uygulamanız açıldığında göndermeniz yeterli.';
+      note.classList.add('is-success');
+    }
+  });
+}
+
+function cardMatchesFilter(card,filter){
+  if(filter === 'all') return true;
+  const text = card.innerText.toLocaleLowerCase('tr-TR');
+  const keywords = {
+    health:['tıp','diş','eczacılık','sağlık','hemşirelik','veteriner'],
+    engineering:['mühendis','bilgisayar','yazılım','bilgi teknolojileri','yapay zeka','teknik','it','havacılık','makine','elektrik','elektronik','endüstri'],
+    business:['işletme','ekonomi','finans','pazarlama','yönetim','lojistik','kalite','girişimcilik','uluslararası işletme','business'],
+    arts:['sanat','tasarım','grafik','fotoğraf','sahne','tiyatro','müzik','dans','film','televizyon','painting','photography','design']
+  };
+
+  return (keywords[filter] || []).some(keyword=>text.includes(keyword));
+}
+
+function applyUniversityFilter(filter){
+  const grid = document.querySelector('.uni-cards-grid');
+  if(!grid) return;
+
+  const children = Array.from(grid.children);
+  let currentHeading = null;
+  let visibleInSection = 0;
+  const sections = [];
+
+  children.forEach(child=>{
+    if(child.classList.contains('country-heading')){
+      if(currentHeading){
+        sections.push({heading:currentHeading,visible:visibleInSection});
+      }
+      currentHeading = child;
+      visibleInSection = 0;
+      child.classList.remove('is-hidden');
+      return;
+    }
+
+    if(child.classList.contains('uni-card')){
+      const visible = cardMatchesFilter(child,filter);
+      child.classList.toggle('is-hidden',!visible);
+      if(visible) visibleInSection += 1;
+    }
+  });
+
+  if(currentHeading){
+    sections.push({heading:currentHeading,visible:visibleInSection});
+  }
+
+  sections.forEach(section=>{
+    section.heading.classList.toggle('is-hidden',filter !== 'all' && section.visible === 0);
+  });
+}
+
+function setupUniversityFilters(){
+  document.querySelectorAll('.filter-chip').forEach(button=>{
+    button.addEventListener('click',()=>{
+      document.querySelectorAll('.filter-chip').forEach(chip=>chip.classList.remove('active'));
+      button.classList.add('active');
+      applyUniversityFilter(button.dataset.filter || 'all');
+    });
+  });
+}
+
+window.addEventListener('load',()=>{
+  animateCounters();
+  labelTables();
+  setupAppointmentForm();
+  setupUniversityFilters();
+});
 </script>
 </body>
 </html>
